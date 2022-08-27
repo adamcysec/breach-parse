@@ -35,6 +35,8 @@ The bash version uses `grep -a -E "$1" "$file"` for searches. The `-E` enables e
 - output password list
 
 <br/>
+<br/>
+<br/>
 
 **Example 1**
 
