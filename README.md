@@ -34,7 +34,7 @@ The bash version uses `grep -a -E "$1" "$file"` for searches. The `-E` enables e
 - type : bool
 - output password list
 
-</b>
+<br/>
 
 **Example 1**
 
