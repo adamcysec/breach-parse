@@ -1,4 +1,4 @@
-# breach-parse
+# breach-parse.py
 
 ## Synposis
 The same [breach-parse](https://github.com/hmaverickadams/breach-parse) tool from [hmaverickadams](https://github.com/hmaverickadams) but written in python3. Only works on Linux.. sorry Windows users. 
