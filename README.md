@@ -8,6 +8,8 @@ This tool runs about a minute faster than it's bash counterpart and is more accu
 
 The bash version uses `grep -a -E "$1" "$file"` for searches. The `-E` enables extended regex comparision, therefore if your search term is `@bob.com` you can potentially get false positives such as `@bobscom.com`. This tool uses python's `in` keyword for an exact string comparision. 
 
+The bash version splits user and password pairs on `:` , however the dataset also uses `;` for some pairs.
+
 ## Installation
 Download breached password list from magnet located here: 
 ```
