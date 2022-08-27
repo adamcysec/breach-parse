@@ -15,6 +15,7 @@ magnet:?xt=urn:btih:7ffbcd8cee06aba2ce6561688cf68ce2addca0a3&dn=BreachCompilatio
 ```
 
 I reccomend editing line 24 and adding your `BreachCompilation/data` directory as the default `datafile` value or you will need to use the `datafile` parameter:
+
 `py breach-parse.py @yahoo.com yahoo --datafile "/media/adam/BreachCompilation/data"`
 
 ## Usage
