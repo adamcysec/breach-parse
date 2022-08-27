@@ -6,7 +6,7 @@ The same [breach-parse](https://github.com/hmaverickadams/breach-parse) tool fro
 ## Description
 This tool runs about a minute faster than it's bash counterpart and is more accurate when searching. 
 
-The bash version uses `grep -a -E "$1" "$file"` for searches. The `-E` enables extended regex comparision, therefore if your search term is `@bob.com` you can potentially get false positives such as `@bobscom.com`.
+The bash version uses `grep -a -E "$1" "$file"` for searches. The `-E` enables extended regex comparision, therefore if your search term is `@bob.com` you can potentially get false positives such as `@bobscom.com`. This tool uses `'search_term' in record` for an exact string comparision. 
 
 ## Usage
 
