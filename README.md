@@ -10,14 +10,60 @@ The bash version uses `grep -a -E "$1" "$file"` for searches. The `-E` enables e
 
 ## Usage
 
-**Parameter -ip**
+**Parameter term**
+- positional : position 1
+- required
 - type : str
-- one or more ips in csv format
+- one string to search with
+
+**Parameter output**
+- positional : position 2
+- required
+- type : str
+- filename to output
+
+**Parameter --datafile, -d**
+- type : str
+- filepath to BreachCompilation/data
+
+**Parameter --userfile, -u**
+- type : bool
+- output user list
+
+**Parameter --passwordfile, -p**
+- type : bool
+- output password list
 
 **Example 1**
 
+`py breach-parse.py @yahoo.com yahoo`
 
-`py find-messageTypeAnomalies.py -c  "134248483" -v`
+- Search data with `@yahoo.com`
+- Outputs `yahoo.txt`
 
-- Uses the alias of parameter --cid to specify the customer id number
-- Uses verbose output
+
+**Example 2**
+
+`py breach-parse.py @yahoo.com yahoo --userfile`
+
+- Search data with `@yahoo.com`
+- Outputs `yahoo.txt`
+- Outputs `yahoo_users.txt`
+
+**Example 3**
+
+`py breach-parse.py @yahoo.com yahoo --passwordfile`
+
+- Search data with `@yahoo.com`
+- Outputs `yahoo.txt`
+- Outputs `yahoo_users.txt`
+- Outputs `yahoo_password.txt`
+
+**Example 4**
+
+`py breach-parse.py @yahoo,com yahoo -u -p`
+
+- Search data with `@yahoo.com`
+- Outputs `yahoo.txt`
+- Outputs `yahoo_users.txt`
+- Outputs `yahoo_password.txt`
