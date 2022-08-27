@@ -218,10 +218,8 @@ def main():
     out_file(res, out_filename)
 
     if userfile:
-        #py_logger.info("saving results to user file")
         out_user_file(res, f"{out_filename}_users.txt")
     if passwordfile:
-        #py_logger.info("saving results to password file")
         out_password_file(res, f"{out_filename}_passwords.txt")
     
     end = timer()
