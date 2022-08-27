@@ -215,7 +215,7 @@ def main():
     print("saving results")
     
     # output results
-    out_file(res, out_filename)
+    out_file(res, f"{out_filename}.txt")
 
     if userfile:
         out_user_file(res, f"{out_filename}_users.txt")
