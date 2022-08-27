@@ -34,6 +34,8 @@ The bash version uses `grep -a -E "$1" "$file"` for searches. The `-E` enables e
 - type : bool
 - output password list
 
+</b>
+
 **Example 1**
 
 `py breach-parse.py @yahoo.com yahoo`
