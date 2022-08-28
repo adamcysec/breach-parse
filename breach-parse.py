@@ -1,9 +1,7 @@
 import argparse
 import textwrap
-import time
 from timeit import default_timer as timer
 from multiprocessing import Pool, cpu_count
-import glob
 import os.path
 from contextlib import ExitStack
 
