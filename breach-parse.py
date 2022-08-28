@@ -219,7 +219,7 @@ def main():
         out_password_file(res, f"{out_filename}_passwords.txt")
     
     end = timer()
-    print(f"elpased time: {end - start}")
+    print(f"elapsed time: {end - start}")
 
 if __name__ == '__main__':
     main()
