@@ -1,7 +1,7 @@
 # breach-parse.py
 
 ## Synposis
-The same [breach-parse](https://github.com/hmaverickadams/breach-parse) tool from [hmaverickadams](https://github.com/hmaverickadams) but written in python3. Only works on Linux.. sorry Windows users. 
+The same [breach-parse](https://github.com/hmaverickadams/breach-parse) tool from [hmaverickadams](https://github.com/hmaverickadams) but written in python3.
 
 ## Description
 This tool runs about a minute faster than it's bash counterpart and is more accurate when searching. 

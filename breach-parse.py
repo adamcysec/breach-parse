@@ -100,7 +100,7 @@ def search_file(files, search_term):
     results = []
     
     with ExitStack() as stack:
-        working_files = [stack.enter_context(open(x, "rb")) for x in files]
+        working_files = [stack.enter_context(open(x, "r", encoding="latin-1")) for x in files]
         for lines in working_files:
             for line in lines:
                 #if insensitive:
@@ -123,11 +123,10 @@ def out_file(results, out_filename):
         file name
     """
     
-    with open(out_filename, 'w') as f:
+    with open(out_filename, 'w', encoding="utf-8") as f:
         for row in results:
             for item in row:
-                data = item.decode('utf-8')
-                f.writelines(data)
+                f.writelines(item)
     
     print(f"file saved: {out_filename}")
 
@@ -142,16 +141,15 @@ def out_user_file(results, out_filename):
         file name
     """
 
-    with open(out_filename, 'w') as f:
+    with open(out_filename, 'w', encoding="utf-8") as f:
         for row in results:
             for item in row:
                 try:
-                    data = item.decode('utf-8')
-                    x = data.split(':', 1)
+                    x = item.split(':', 1)
                     
                     # some entries use ';' as a delimiter
                     if len(x) < 2:
-                        x = data.split(';', 1)
+                        x = item.split(';', 1)
 
                     f.writelines(f"{x[0]}\n")
                     
@@ -171,16 +169,14 @@ def out_password_file(results, out_filename):
         file name
     """
 
-    with open(out_filename, 'w') as f:
+    with open(out_filename, 'w', encoding="utf-8") as f:
         for row in results:
             for item in row:
                 try:
-                    data = item.decode('utf-8')
-                    
-                    x = data.split(':', 1)
+                    x = item.split(':', 1)
                     # some entries use ';' as a delimiter
                     if len(x) < 2:
-                        x = data.split(';', 1) 
+                        x = item.split(';', 1) 
                     
                     f.writelines(x[1])
                 
@@ -196,7 +192,6 @@ def main():
     args = get_args()
     out_filename = args['output']
     term = args['term']
-    b_term = str.encode(term)
     userfile = args['userfile']
     passwordfile = args['passwordfile']
 
@@ -205,7 +200,7 @@ def main():
     # prep search
     breach_fpath = args['datafile']
     breach_data_files = get_breach_files(breach_fpath) # get all txt breach files
-    queue = format_data(breach_data_files, b_term) # prep data for the pool
+    queue = format_data(breach_data_files, term) # prep data for the pool
     
     # start multi threaded search
     with Pool() as pool:
