@@ -203,7 +203,7 @@ def main():
     breach_data_files = get_breach_files(breach_fpath) # get all txt breach files
     queue = format_data(breach_data_files, b_term) # prep data for the pool
     
-    # start multi threaded search
+    # start multi processing search
     with Pool() as pool:
         res = pool.starmap(search_file, queue)
     
