@@ -103,10 +103,6 @@ def search_file(files, search_term):
         working_files = [stack.enter_context(open(x, "rb")) for x in files]
         for lines in working_files:
             for line in lines:
-                #if insensitive:
-                #    if search_term.lower() in line.lower():
-                #        results.append(line)
-                #else:
                 if search_term in line:
                     results.append(line)
     
