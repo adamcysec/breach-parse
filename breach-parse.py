@@ -101,10 +101,6 @@ def search_file(files, search_term):
         working_files = [stack.enter_context(open(x, "r", encoding="latin-1")) for x in files]
         for lines in working_files:
             for line in lines:
-                #if insensitive:
-                #    if search_term.lower() in line.lower():
-                #        results.append(line)
-                #else:
                 if search_term in line:
                     results.append(line)
     
@@ -200,7 +196,7 @@ def main():
     breach_data_files = get_breach_files(breach_fpath) # get all txt breach files
     queue = format_data(breach_data_files, term) # prep data for the pool
     
-    # start multi threaded search
+    # start multi processing search
     with Pool() as pool:
         res = pool.starmap(search_file, queue)
     

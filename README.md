@@ -10,6 +10,11 @@ The bash version uses `grep -a -E "$1" "$file"` for searches. The `-E` enables e
 
 The bash version splits user and password pairs on `:` , however the dataset also uses `;` for some pairs.
 
+## Dependencies
+breach-parse.py requires the following dependencies:
+- [argparse](https://pypi.org/project/argparse/)
+    - `pip install argparse`
+
 ## Installation
 Download breached password list from magnet located here: 
 ```
