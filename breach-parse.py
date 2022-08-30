@@ -65,17 +65,9 @@ def format_data(files, term):
     """
 
     data = []
-    five_files = []
-    count = 0
-    for file in files:
-        if count == 5:
-            data.append([five_files, term])
-            five_files = []
-            count = 0
-        else:
-            five_files.append(file)
-            count += 1
-
+    for i in range(0, len(files), 5):
+        data.append([files[i:i+5], term])
+    
     return data
 
 def search_file(files, search_term):
